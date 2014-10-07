@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeTweet">
+            <connections>
+                <outlet property="characterCountLabel" destination="IIl-0l-mCJ" id="v87-hN-xTk"/>
+                <outlet property="name" destination="Rwa-SC-NES" id="jyt-uI-0is"/>
+                <outlet property="profileImage" destination="hUh-MI-Vwp" id="gi6-cK-Rcg"/>
+                <outlet property="screenname" destination="E89-86-mc7" id="N4Z-mU-p6Q"/>
+                <outlet property="tweetText" destination="EBq-yT-xqx" id="mwR-c6-Oxq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwa-SC-NES">
+                    <rect key="frame" x="89" y="83" width="142" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-MI-Vwp">
+                    <rect key="frame" x="8" y="83" width="78" height="71"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="Kdn-Au-l5H"/>
+                        <constraint firstAttribute="width" constant="78" id="UZA-Ph-8nv"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="screen name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E89-86-mc7">
+                    <rect key="frame" x="89" y="112" width="99" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="140" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIl-0l-mCJ">
+                    <rect key="frame" x="270" y="83" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EBq-yT-xqx">
+                    <rect key="frame" x="8" y="157" width="267" height="134"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="hUh-MI-Vwp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="83" id="9SK-Q8-RmA"/>
+                <constraint firstItem="EBq-yT-xqx" firstAttribute="top" secondItem="hUh-MI-Vwp" secondAttribute="bottom" constant="3" id="Dyg-xf-1f4"/>
+                <constraint firstItem="E89-86-mc7" firstAttribute="leading" secondItem="hUh-MI-Vwp" secondAttribute="trailing" constant="3" id="F8M-nj-HsC"/>
+                <constraint firstItem="E89-86-mc7" firstAttribute="leading" secondItem="hUh-MI-Vwp" secondAttribute="trailing" constant="3" id="F9j-sT-SiB"/>
+                <constraint firstItem="EBq-yT-xqx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="G9M-CI-Bpo"/>
+                <constraint firstItem="Rwa-SC-NES" firstAttribute="leading" secondItem="hUh-MI-Vwp" secondAttribute="trailing" constant="3" id="bAC-eJ-1Th"/>
+                <constraint firstItem="hUh-MI-Vwp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="by4-aI-VG6"/>
+                <constraint firstItem="EBq-yT-xqx" firstAttribute="top" secondItem="E89-86-mc7" secondAttribute="bottom" constant="24" id="sJ6-U5-5Ol"/>
+                <constraint firstItem="Rwa-SC-NES" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="83" id="udi-V6-flZ"/>
+                <constraint firstItem="E89-86-mc7" firstAttribute="top" secondItem="Rwa-SC-NES" secondAttribute="bottom" constant="8" id="w7Z-hN-FF4"/>
+                <constraint firstAttribute="trailing" secondItem="EBq-yT-xqx" secondAttribute="trailing" constant="45" id="zHT-ju-nFn"/>
+            </constraints>
+            <point key="canvasLocation" x="-426" y="100"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

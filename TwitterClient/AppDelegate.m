@@ -1,4 +1,3 @@
-//
 //  AppDelegate.m
 //  TwitterClient
 //
@@ -7,6 +6,11 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginController.h"
+#import "TwitterClient.h"
+#import "User.h"
+#import "TweetsViewController.h"
+#import "AppConstants.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +21,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogout) name:kTwitterUserDidLogoutNotification object:nil];
+    
+    User *user = [User currentUser];
+    
+    if (user != nil) {
+        TweetsViewController *tvc = [[TweetsViewController alloc] init];
+        UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:tvc];
+        self.window.rootViewController = unc;
+    } else {
+        LoginController *lvc = [[LoginController alloc] init];
+        UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:lvc];
+        self.window.rootViewController = unc;
+    }
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
+}
+
+
+
+- (void) userDidLogout {
+    LoginController *lvc = [[LoginController alloc] init];
+    UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:lvc];
+    self.window.rootViewController = unc;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -40,6 +71,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    [[TwitterClient sharedInstance] openURL: url];
+    
+    return YES;
 }
 
 @end
